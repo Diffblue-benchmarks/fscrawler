@@ -1,0 +1,406 @@
+# Tested on Deeptest release 1.12.0
+cbmcArguments:
+  java-generate-no-comments: true
+phases:
+-
+  timeout: 60
+  cbmcArguments:
+    max-nondet-array-length: 10
+    unwind: 1
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 10
+    unwind: 1
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 4
+    load-containing-class-only: true
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 50
+    max-nondet-string-length: 50
+    unwind: 4
+    load-containing-class-only: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 130
+    max-nondet-string-length: 110
+    unwind: 10
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 300
+    max-nondet-string-length: 100
+    unwind: 10units:
+  - target:
+    - dir: core/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/FsParserAbstract.class
+      sourceDir: core/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/FsParserAbstract.java
+    # Child of FsParserAbstract.class
+    - dir: beans/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/beans/Attributes.class
+      sourceDir: beans/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/beans/Attributes.java
+    # Child of FsParserAbstract.class
+    - dir: beans/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/beans/Doc.class
+      sourceDir: beans/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/beans/Doc.java
+    # Child of FsParserAbstract.class
+    - dir: beans/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/beans/DocParser.class
+      sourceDir: beans/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/beans/DocParser.java
+    # Child of FsParserAbstract.class
+    - dir: beans/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/beans/FsJob.class
+      sourceDir: beans/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/beans/FsJob.java
+    # Child of FsParserAbstract.class
+    - dir: beans/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/beans/FsJobFileHandler.class
+      sourceDir: beans/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/beans/FsJobFileHandler.java
+    # Child of FsParserAbstract.class
+    - dir: beans/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/beans/PathParser.class
+      sourceDir: beans/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/beans/PathParser.java
+    # Child of FsParserAbstract.class
+    - dir: beans/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/beans/ScanStatistic.class
+      sourceDir: beans/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/beans/ScanStatistic.java
+    # Child of FsParserAbstract.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ElasticsearchClient.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ElasticsearchClient.java
+    # Child of FsParserAbstract.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESSearchHit.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESSearchHit.java
+    # Child of FsParserAbstract.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESSearchRequest.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESSearchRequest.java
+    # Child of FsParserAbstract.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESSearchResponse.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESSearchResponse.java
+    # Child of FsParserAbstract.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESTermQuery.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESTermQuery.java
+    # Child of FsParserAbstract.class
+    - dir: crawler/crawler-abstract/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/crawler/FileAbstractModel.class
+      sourceDir: crawler/crawler-abstract/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/crawler/FileAbstractModel.java
+    # Child of FsParserAbstract.class
+    - dir: crawler/crawler-abstract/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/crawler/FileAbstractor.class
+      sourceDir: crawler/crawler-abstract/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/crawler/FileAbstractor.java
+    # Child of FsParserAbstract.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/ByteSizeValue.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/ByteSizeValue.java
+    # Child of FsParserAbstract.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/SignTool.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/SignTool.java
+    # Child of FsParserAbstract.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/FsSettings.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/FsSettings.java
+    # Child of FsParserAbstract.class
+    - dir: tika/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/tika/XmlDocParser.class
+      sourceDir: tika/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/tika/XmlDocParser.java
+  - target:
+    - dir: tika/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/tika/TikaDocParser.class
+      sourceDir: tika/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/tika/TikaDocParser.java
+    # Child of TikaDocParser.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/FsCrawlerUtil.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/FsCrawlerUtil.java
+  - target:
+    - dir: cli/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/cli/FsCrawlerCli.class
+      sourceDir: cli/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/cli/FsCrawlerCli.java
+    # Child of FsCrawlerCli.class
+    - dir: core/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/FsCrawlerImpl.class
+      sourceDir: core/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/FsCrawlerImpl.java
+    # Child of FsCrawlerCli.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESVersion.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESVersion.java
+    # Child of FsCrawlerCli.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/MetaFileHandler.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/MetaFileHandler.java
+    # Child of FsCrawlerCli.class
+    - dir: rest/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/rest/RestServer.class
+      sourceDir: rest/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/rest/RestServer.java
+    # Child of FsCrawlerCli.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/Elasticsearch.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/Elasticsearch.java
+    # Child of FsCrawlerCli.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/Fs.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/Fs.java
+    # Child of FsCrawlerCli.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/FsCrawlerValidator.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/FsCrawlerValidator.java
+    # Child of FsCrawlerCli.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/FsSettingsFileHandler.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/FsSettingsFileHandler.java
+    # Child of FsCrawlerCli.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/FsSettingsParser.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/FsSettingsParser.java
+  - target:
+    - dir: tika/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/tika/TikaInstance.class
+      sourceDir: tika/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/tika/TikaInstance.java
+  - target:
+    - dir: cli/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/cli/FsCrawlerJobsUtil.class
+      sourceDir: cli/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/cli/FsCrawlerJobsUtil.java
+  - target:
+    - dir: tika/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/tika/XmlDocParser.class
+      sourceDir: tika/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/tika/XmlDocParser.java
+  - target:
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/FsCrawlerValidator.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/FsCrawlerValidator.java
+    # Child of FsCrawlerValidator.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/OsValidator.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/OsValidator.java
+  - target:
+    - dir: core/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/FsCrawlerImpl.class
+      sourceDir: core/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/FsCrawlerImpl.java
+    # Child of FsCrawlerImpl.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ElasticsearchClientUtil.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ElasticsearchClientUtil.java
+    # Child of FsCrawlerImpl.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/TimeValue.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/TimeValue.java
+    # Child of FsCrawlerImpl.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/Server.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/Server.java
+  - target:
+    - dir: elasticsearch-client/elasticsearch-client-v5/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/v5/ElasticsearchClientV5.class
+      sourceDir: elasticsearch-client/elasticsearch-client-v5/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/v5/ElasticsearchClientV5.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESBoolQuery.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESBoolQuery.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESDocumentField.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESDocumentField.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESHighlightField.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESHighlightField.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESMatchQuery.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESMatchQuery.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESPrefixQuery.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESPrefixQuery.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESQuery.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESQuery.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESRangeQuery.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESRangeQuery.java
+    # Child of ElasticsearchClientV5.class
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESTermsAggregation.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESTermsAggregation.java
+    # Child of ElasticsearchClientV5.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/JsonUtil.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/JsonUtil.java
+  - target:
+    - dir: elasticsearch-client/elasticsearch-client-v6/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/v6/ElasticsearchClientV6.class
+      sourceDir: elasticsearch-client/elasticsearch-client-v6/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/v6/ElasticsearchClientV6.java
+  - target:
+    - dir: elasticsearch-client/elasticsearch-client-v7/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/v7/ElasticsearchClientV7.class
+      sourceDir: elasticsearch-client/elasticsearch-client-v7/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/v7/ElasticsearchClientV7.java
+  - target:
+    - dir: elasticsearch-client/elasticsearch-client-base/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/client/ESVersion.class
+      sourceDir: elasticsearch-client/elasticsearch-client-base/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/client/ESVersion.java
+  - target:
+    - dir: rest/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/rest/RestServer.class
+      sourceDir: rest/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/rest/RestServer.java
+  - target:
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/FsCrawlerUtil.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/FsCrawlerUtil.java
+  - target:
+    - dir: rest/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/rest/TimeBasedUUIDGenerator.class
+      sourceDir: rest/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/rest/TimeBasedUUIDGenerator.java
+  - target:
+    - dir: rest/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/rest/UploadApi.class
+      sourceDir: rest/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/rest/UploadApi.java
+    # Child of UploadApi.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/MetaParser.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/MetaParser.java
+    # Child of UploadApi.class
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/ServerUrl.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/ServerUrl.java
+    # Child of UploadApi.class
+    - dir: tika/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/tika/TikaDocParser.class
+      sourceDir: tika/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/tika/TikaDocParser.java
+  - target:
+    - dir: core/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/FsParserNoop.class
+      sourceDir: core/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/FsParserNoop.java
+  - target:
+    - dir: settings/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/settings/Fs.class
+      sourceDir: settings/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/settings/Fs.java
+    # Child of Fs.class
+    - dir: framework/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/framework/Percentage.class
+      sourceDir: framework/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/framework/Percentage.java
+  - target:
+    - dir: crawler/crawler-ssh/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/crawler/ssh/FileAbstractorSSH.class
+      sourceDir: crawler/crawler-ssh/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/crawler/ssh/FileAbstractorSSH.java
+  - target:
+    - dir: crawler/crawler-fs/target/classes
+      file: fr/pilato/elasticsearch/crawler/fs/crawler/fs/FileAbstractorFile.class
+      sourceDir: crawler/crawler-fs/src/main/java
+      sourceFile: fr/pilato/elasticsearch/crawler/fs/crawler/fs/FileAbstractorFile.java
